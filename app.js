@@ -2,7 +2,7 @@ var tabs = require("tabs");
 var simpleStorage = require("simple-storage");
 
 tabs.onReady.add(function(tab){
-  var phoneNumberRegex = /(\d{3})-(\d{3})-(\d{4})/g;
+  var phoneNumberRegex = /(\d{3})\-(\d{3})\-(\d{4})/g;
   var body = tab.contentDocument.body.innerHTML;
   body = body.replace(phoneNumberRegex, '<a class="dialtwilio" href="#">$&</a>');
   tab.contentDocument.body.innerHTML = body;
